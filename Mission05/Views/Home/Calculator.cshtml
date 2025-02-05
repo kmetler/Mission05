@@ -1,6 +1,35 @@
 ﻿@{
     ViewData["Title"] = "Calculator";
 }
-<h1>@ViewData["Title"]</h1>
 
-<p>Use this page to detail your site's privacy policy.</p>
+<div class="container d-flex justify-content-center align-items-center vh-100">
+    <div class="card p-4 shadow-lg" style="max-width: 400px; width: 100%;">
+        <h2 class="text-center mb-4">Calculate Cost for Session</h2>
+
+        <div class="mb-3">
+            <label for="hours" class="form-label">Enter number of hours:</label>
+            <input type="number" class="form-control" id="hours" name="hours" min="0" placeholder="Enter hours">
+            <span id="error-message" class="text-danger d-none">Please enter a positive number.</span>
+        </div>
+
+        <div class="mb-3">
+            <label for="rate" class="form-label">Hourly Rate ($):</label>
+            <input type="text" class="form-control" id="rate" name="rate" value="40" readonly>
+        </div>
+
+        <div class="text-center">
+            <button id="calculate" class="btn btn-secondary">Calculate Total</button>
+        </div>
+
+        <div class="mt-3">
+            <label for="total" class="form-label">Total Cost ($):</label>
+            <input type="text" class="form-control" id="total" name="total" readonly>
+        </div>
+
+        <div class="text-center mt-4">
+            <a asp-controller="Home" asp-action="Index" class="btn btn-secondary">Go to Home Page</a>
+        </div>
+    </div>
+</div>
+
+@* <script src="~/js/site.js"></script> *@
